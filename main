@@ -1,0 +1,38 @@
+<!-- Midterm Practical Assignment | Todd Upshaw | Student ID: todups0860 | Date: November 30, 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todd Upshaw - Target Heart Rate Calculator</title>
+  <script type="text/javascript">
+    function calcHeartRate() {
+      var age = document.getElementById("ageInput").value;
+      age = parseInt(age);
+
+      // Validate age input
+      if (isNaN(age) || age < 0 || age > 125) {
+        alert("Please enter a valid age between 0 and 125.");
+        return;
+      }
+
+      // Calculate heart rate values
+      var maxHR = 220 - age;
+      var minTHR = Math.floor(maxHR * 0.5);
+      var maxTHR = Math.floor(maxHR * 0.85);
+
+      // Display result
+      document.getElementById("output").textContent =
+        "Target Heart Rate: " + minTHR + " to " + maxTHR + " Beats Per Minute";
+    }
+  </script>
+</head>
+<body>
+  <h1>Todd Upshaw - Target Heart Rate Calculator</h1>
+  <form>
+    <label for="ageInput">Your Age:</label>
+    <input type="text" id="ageInput" value="" />
+    <button type="button" onclick="calcHeartRate()">Calculate Target Heart Rate</button>
+  </form>
+  <p id="output">Target Heart Rate:</p>
+</body>
+</html>
