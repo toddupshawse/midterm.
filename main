@@ -3,7 +3,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Todd Upshaw - Target Heart Rate Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Target Heart Rate Calculator | Todd Upshaw</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="style.css" />
+
   <script type="text/javascript">
     function calcHeartRate() {
       var age = document.getElementById("ageInput").value;
@@ -15,7 +20,7 @@
         return;
       }
 
-      // Calculate heart rate values
+      // Calculate values
       var maxHR = 220 - age;
       var minTHR = Math.floor(maxHR * 0.5);
       var maxTHR = Math.floor(maxHR * 0.85);
@@ -26,13 +31,22 @@
     }
   </script>
 </head>
+
 <body>
-  <h1>Todd Upshaw - Target Heart Rate Calculator</h1>
-  <form>
-    <label for="ageInput">Your Age:</label>
-    <input type="text" id="ageInput" value="" />
-    <button type="button" onclick="calcHeartRate()">Calculate Target Heart Rate</button>
-  </form>
-  <p id="output">Target Heart Rate:</p>
+
+  <div class="container">
+    <h1>Target Heart Rate Calculator</h1>
+    <h2 class="sub">By: Todd Upshaw (Student ID: todups0860)</h2>
+
+    <div class="card">
+      <label for="ageInput">Your Age:</label>
+      <input type="text" id="ageInput" placeholder="Enter your age..." />
+
+      <button onclick="calcHeartRate()">Calculate Target Heart Rate</button>
+
+      <p id="output" class="result">Target Heart Rate:</p>
+    </div>
+  </div>
+
 </body>
 </html>
